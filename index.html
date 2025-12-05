@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sarkar Garage - Bike Servicing & Parts</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Poppins, Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(90deg, #0a6e69, #0d6f5a);
+    padding: 25px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4);
+  }
+
+  /* Navbar */
+  nav {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    padding: 18px;
+    border-bottom: 3px solid #ff9800;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav a {
+    color: #ff6d00;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 700;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: #000;
+    transform: scale(1.05);
+  }
+
+  /* Hero Section */
+  .hero {
+    height: 150px;
+    background: url('https://i.ibb.co/3dW2Z3Z/garage.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 20px black;
+    border-bottom: 5px solid #ff9800;
+  }
+
+  /* Section Title */
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    padding: 35px 0 10px;
+    color: #ff6d00;
+    font-weight: 700;
+  }
+
+  /* Products Grid */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 25px;
+    padding: 20px;
+  }
+
+  /* Product Card */
+  .product-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #ffe0b2;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  }
+
+  .product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 22px rgba(255, 140, 0, 0.4);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 220px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 2px solid #ff9800;
+  }
+
+  .product-card h3 {
+    margin: 12px 0 8px;
+    color: #ff6d00;
+    font-size: 23px;
+    font-weight: 700;
+  }
+
+  .product-card p {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .buy-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .buy-btn:hover {
+    transform: scale(1.08);
+    background: #1ebe5d;
+  }
+
+  /* Footer */
+  footer {
+    background: #06675a;
+    text-align: center;
+    padding: 35px;
+    font-size: 20px;
+    margin-top: 50px;
+    color: #fff;
+    font-weight: 600;
+  }
+</style>
+</head>
+
+<body>
+
+<header>Sarkar Garage — Bike Servicing & Parts</header>
+
+<nav>
+  <a href="#parts">Parts</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">Premium Bike Servicing</div>
+
+<section id="parts">
+  <div class="section-title">Available Bike Parts</div>
+
+  <div class="products">
+
+    <div class="product-card">
+      <img src="oil.jpeg" alt="Engine Oil" />
+      <h3>Engine Oil</h3>
+      <p>High-performance engine oil for all motorcycles.</p>
+      <a class="buy-btn" href="https://wa.me/917499665959?text=I want Engine Oil">Buy on WhatsApp</a>
+    </div>
+
+    <div class="product-card">
+      <img src="pad.jpeg" alt="Brake Pads" />
+      <h3>Brake Pads</h3>
+      <p>High quality pads for smooth and safe braking.</p>
+      <a class="buy-btn" href="https://wa.me/917499665959?text=I want Brake Pads">Buy on WhatsApp</a>
+    </div>
+
+    <div class="product-card">
+      <img src="filter.jpeg" alt="Air Filter" />
+      <h3>Air Filter</h3>
+      <p>Premium filter for better mileage and engine health.</p>
+      <a class="buy-btn" href="https://wa.me/917499665959?text=I want Air Filter">Buy on WhatsApp</a>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contact">
+  <p>Contact: +91 7499665959 | Sarkar Garage, India</p>
+  <p>Near T Point Mahur | Mohammad Samad</p>
+  <p>© 2025 Sarkar Garage. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
