@@ -267,16 +267,37 @@ header span {
     transform: scale(1.1);
   }
 
-  /* ===================== FOOTER ===================== */
-  footer {
-    background: #000;
-    color: #fff;
-    padding: 40px;
-    text-align: center;
-    margin-top: 40px;
-    font-size: 18px;
-    letter-spacing: 1px;
-  }
+ /* ===================== FOOTER ===================== */
+footer {
+  background: linear-gradient(135deg, #1a1a1a, #0d47a1, #1976d2); /* Premium dark blue gradient */
+  color: #e3f2fd;
+  padding: 45px 20px;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+}
+
+footer p {
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+footer p span {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Smooth subtle glow */
+footer:hover {
+  box-shadow: 0 -5px 30px rgba(25, 118, 210, 0.6);
+  transition: 0.4s;
+}
+
+
 
  .scroll-bike {
   position: absolute;
@@ -397,13 +418,14 @@ header span {
 
   </div>
 </section>
-
 <footer id="contact">
-  <p>Contact: +91 7499665959 | Sarkar Garage, India</p>
-  <p>Near T Point Mahur | Mohammad Samad</p>
+  <p><span>📞 Contact:</span> +91 7499665959</p>
+  <p><span>📍 Location:</span> Near T-Point Mahur, Maharashtra</p>
+  <p><span>🏍️ Workshop:</span> Sarkar Garage – Premium Bike Service & Spare Parts</p>
+  <p><span>👤 Owner:</span> Mohammad Samad</p>
   <p>© 2025 Sarkar Garage. All Rights Reserved.</p>
-  
 </footer>
+
 <!-- FLOATING WHATSAPP -->
 <a class="floating-whatsapp" href="https://wa.me/917499665959" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
