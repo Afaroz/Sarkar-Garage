@@ -144,14 +144,41 @@ header span {
 
 
 
-  /* Section Title */
-  .section-title {
-    text-align: center;
-    font-size: 32px;
-    padding: 35px 0 10px;
-    color: #ff6d00;
-    font-weight: 700;
-  }
+  /* Section Title - Premium Stylish */
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  padding: 35px 0 10px;
+  color: #ff6d00;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+/* Gradient underline bar */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 5px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff6d00, #ff9800, #ffc107);
+}
+
+/* Subtle glowing animation */
+@keyframes titleGlow {
+  0% { text-shadow: 0 0 8px rgba(255, 140, 0, 0.4); }
+  50% { text-shadow: 0 0 18px rgba(255, 140, 0, 0.9); }
+  100% { text-shadow: 0 0 8px rgba(255, 140, 0, 0.4); }
+}
+
 
   /* Products Grid */
   .products {
