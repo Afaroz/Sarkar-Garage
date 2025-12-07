@@ -142,20 +142,24 @@ header span {
 
 
 
-
-
-  /* Section Title - Premium Stylish */
+/* Section Title - Premium Stylish */
 .section-title {
   text-align: center;
-  font-size: 34px;
+  font-size: 20px;
   padding: 35px 0 10px;
-  color: #ff6d00;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   position: relative;
   display: inline-block;
   margin: 0 auto;
+
+  /* Beautiful blue gradient text */
+  background: linear-gradient(90deg, #007bff, #00c6ff, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-family: 'Poppins', sans-serif;  /* Stylish font */
   animation: titleGlow 3s ease-in-out infinite;
 }
 
@@ -166,17 +170,17 @@ header span {
   left: 50%;
   bottom: -6px;
   transform: translateX(-50%);
-  width: 140px;
+  width: 160px;
   height: 5px;
   border-radius: 10px;
-  background: linear-gradient(90deg, #ff6d00, #ff9800, #ffc107);
+  background: linear-gradient(90deg, #007bff, #00c6ff, #4facfe);
 }
 
-/* Subtle glowing animation */
+/* Glowing animation */
 @keyframes titleGlow {
-  0% { text-shadow: 0 0 8px rgba(255, 140, 0, 0.4); }
-  50% { text-shadow: 0 0 18px rgba(255, 140, 0, 0.9); }
-  100% { text-shadow: 0 0 8px rgba(255, 140, 0, 0.4); }
+  0%   { text-shadow: 0 0 8px rgba(0, 153, 255, 0.4); }
+  50%  { text-shadow: 0 0 20px rgba(0, 153, 255, 0.9); }
+  100% { text-shadow: 0 0 8px rgba(0, 153, 255, 0.4); }
 }
 
 
