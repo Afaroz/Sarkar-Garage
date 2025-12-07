@@ -134,18 +134,38 @@
     transform: scale(1.08);
     background: #1ebe5d;
   }
-
-  /* Footer */
-  footer {
-    background: #06675a;
-    text-align: center;
-    padding: 35px;
-    font-size: 20px;
-    margin-top: 50px;
+ /* ===================== FLOATING WHATSAPP BTN ===================== */
+  .floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25d366;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
     color: #fff;
-    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+    transition: 0.3s;
+  }
+  .floating-whatsapp:hover {
+    transform: scale(1.1);
   }
 
+  /* ===================== FOOTER ===================== */
+  footer {
+    background: #000;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
 
  .scroll-bike {
   position: absolute;
@@ -243,7 +263,7 @@
       <img src="Gear.jpg" alt="Air Filter" />
       <h3>Engine Work</h3>
       <p>All types of bikes Engine work available in our shop.</p>
-      <a class="buy-btn" href="https://wa.me/917499665959?text=I want Air Filter">Buy on WhatsApp</a>
+      <a class="buy-btn" href="https://wa.me/917499665959?text=I Want to change my bike engine oil what is the price for oil packet.">Buy on WhatsApp</a>
     </div>
 
   </div>
@@ -255,6 +275,8 @@
   <p>© 2025 Sarkar Garage. All Rights Reserved.</p>
   
 </footer>
+<!-- FLOATING WHATSAPP -->
+<a class="floating-whatsapp" href="https://wa.me/917499665959" target="_blank">💬</a>
 
 </body>
 </html>
