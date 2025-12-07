@@ -52,6 +52,10 @@ header span {
 
 
 
+
+
+
+
   /* Navbar */
   nav {
     background: #ffffff;
@@ -78,19 +82,67 @@ header span {
     transform: scale(1.05);
   }
 
- /* Hero Section */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero Section - Modern & Premium */
 .hero {
-    height: 150px;
-    background-color: #333; /* You can choose any color instead */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    font-weight: 900;
-    color: #ffffff;
-    text-shadow: 0 0 20px black;
-    border-bottom: 5px solid #ff9800;
+  height: 180px;
+  background: linear-gradient(120deg, #ff6d00, #bd407d, #ffc107);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(0,0,0,0.6);
+  border-bottom: 5px solid #100d08;
+  position: relative;
+  border-radius: 15px;
 }
+
+/* Contact Badge – Mich Mich Animation */
+.hero .contact {
+  background: #25d366;
+  padding: 8px 20px;
+  margin-top: 12px;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.3);
+  display: inline-block;
+  animation: glowPulse 1.8s infinite ease-in-out;
+}
+
+/* Mich-Mich Glow Animation */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 8px #25d366;
+  }
+  50% {
+    box-shadow: 0 0 22px #25d366, 0 0 35px rgba(37,211,102,0.7);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 8px #25d366;
+  }
+}
+
+
+
+
+
 
   /* Section Title */
   .section-title {
@@ -224,12 +276,21 @@ header span {
   <a href="#parts">Parts</a>
   <a href="#contact">Contact</a>
   
-      <a href="https://www.instagram.com/mdsamad1779?igsh=cWpodnM0bGdydndv" target="_blank" style="color:rgb(255, 114, 43); margin: 0 10px;">📸 Instagram</a>
+      <a href="https://www.instagram.com/mdsamad1779?igsh=cWpodnM0bGdydndv" target="_blank" style="margin: 0 10px;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+       alt="Instagram" 
+       style="width:30px; height:30px; border-radius:7px;">
+</a>
+
     </div>
 
 </nav>
 
-<div class="hero">Premium Bike Servicing <br>🟢📞+917499665959</div>
+<div class="hero">
+  Premium Bike Servicing
+  <br>
+<a href="tel:+917499665959" class="contact">🟢 📞 +91 7499665959</a>
+</div>
 
 <section id="parts">
   <div class="section-title">Available Bike Parts</div>
