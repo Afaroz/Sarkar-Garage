@@ -32,6 +32,8 @@ header {
   font-family: 'Pacifico', cursive; /* Stylish cursive font */
 }
 
+
+
 /* Optional: Separate “Sarkar” with highlight */
 header span {
   background: rgba(0,0,0,0.4);
@@ -308,13 +310,23 @@ footer:hover {
 }
 
 
-
- .scroll-bike {
+/* ===================== SCROLLING BIKES ANIMATION ===================== */
+.scroll-bike {
   position: absolute;
-  top: 1px;          /* increase from 20px → 60px */
-  left: -200px;
+  top: 1px;
   width: 140px;
   animation: bikeMove 5s linear infinite;
+  left: -200px;
+}
+
+/* First image (bike.png) */
+.scroll-bike:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.scroll-bike:nth-child(2) {
+  animation-delay: 0.5s;
+  margin-top: 20px;   /* Hf को नीचे लाने के लिए */
 }
 
 
@@ -344,13 +356,14 @@ footer:hover {
 
 
 
-
-
 </style>
 </head>
 
 <body>
-<img src="bike.png" class="scroll-bike">
+  
+  <img src="bike.png" class="scroll-bike">
+  <img src="Hf.png" class="scroll-bike">
+
 
 <header>
   <span>SARKAR</span> GARAGE
