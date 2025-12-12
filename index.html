@@ -256,28 +256,35 @@ header span {
 
 
 
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 9999; /* Always on top */
+}
 
- /* ===================== FLOATING WHATSAPP BTN ===================== */
-  .floating-whatsapp {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #25d366;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 34px;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
-    transition: 0.3s;
-  }
-  .floating-whatsapp:hover {
-    transform: scale(1.1);
-  }
+.floating-whatsapp img {
+  display: block; /* Prevent blinking */
+  width: 40px;
+  height: 40px;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
 
  /* ===================== FOOTER ===================== */
 footer {
