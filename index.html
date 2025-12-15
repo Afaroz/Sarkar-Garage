@@ -180,12 +180,41 @@ nav a img {
 .buy-btn { display:inline-block; padding:12px 28px; background:#25d366; color:#fff; border-radius:12px; font-weight:700; font-size:17px; text-decoration:none; transition:0.3s; }
 .buy-btn:hover { transform:scale(1.08); background:#1ebe5d; }
 
-/* ===================== FOOTER ===================== */
-footer { background: linear-gradient(135deg,#1a1a1a,#0d47a1,#1976d2); color:#e3f2fd; padding:45px 20px; text-align:center; margin-top:60px; font-size:18px; letter-spacing:1px; border-top-left-radius:25px; border-top-right-radius:25px; box-shadow:0 -5px 20px rgba(0,0,0,0.4); position:relative; overflow:hidden; will-change:transform; }
-footer p { margin:8px 0; font-weight:500; }
-footer p span { font-weight:700; color:#fff; }
-@media (hover:hover){ footer:hover{ box-shadow:0 -5px 30px rgba(25,118,210,0.6); transition:0.4s; } }
 
+
+/* ===================== FOOTER FIX ===================== */
+footer {
+  flex-shrink: 0; /* Footer won’t shrink */
+  background: linear-gradient(135deg,#1a1a1a,#0d47a1,#1976d2);
+  color: #e3f2fd;
+  padding: 45px 20px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  margin-top: 0; /* Remove extra margin to avoid overlap issues */
+}
+
+footer p {
+  margin: 8px 0;
+  font-weight: 500;
+}
+footer p span {
+  font-weight: 700;
+  color: #fff;
+}
+
+@media (hover: hover){
+  footer:hover{
+    box-shadow: 0 -5px 30px rgba(25,118,210,0.6);
+    transition: 0.4s;
+  }
+}
 /* ===================== SCROLLING BIKES ===================== */
 .scroll-bike {
   position:absolute;
