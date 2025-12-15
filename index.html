@@ -18,8 +18,7 @@
     font-family: Poppins, Arial, sans-serif;
     background: #f4f4f4;
     color: #222;
-     width: 100%;
-  overflow-x: hidden !important;
+    overflow-x: hidden;
   }
 
 /* Header - Stylish & Colorful Left-aligned */
@@ -79,7 +78,6 @@ header span {
     position: sticky;
     top: 0;
     z-index: 100;
-     flex-wrap: wrap;
   }
 
   nav a {
@@ -305,7 +303,6 @@ footer:hover {
   width: 140px;
   animation: bikeMove 5s linear infinite;
   left: -200px;
-  overflow: hidden;
 }
 
 /* First image (bike.png) */
@@ -328,10 +325,9 @@ footer:hover {
 
 
 @keyframes bikeMove {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100vw); }
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(calc(100vw + 200px)); }
 }
-
 
 
 
