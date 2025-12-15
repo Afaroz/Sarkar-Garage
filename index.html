@@ -72,7 +72,7 @@ nav {
 nav a {
   color: #ff6d00;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   padding: 10px 18px;
   border-radius: 12px;
@@ -96,7 +96,7 @@ nav a img {
 
 /* ===================== HERO ===================== */
 .hero {
-  height: 120px;
+  height: 100px;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   display: flex;
   flex-direction: column;
@@ -249,6 +249,37 @@ footer p span {
   }
 }
 
+
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;       /* distance from bottom */
+    right: 20px;        /* distance from right */
+    width: 60px;        /* button size */
+    height: 60px;
+    background-color: #25d366;  /* WhatsApp green */
+    border-radius: 50%;         /* circular button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);  /* button grows slightly on hover */
+}
+
+.floating-whatsapp img {
+    width: 35px;
+    height: 35px;
+}
+
+
+
+
 /* ===================== MOBILE SPECIFIC ===================== */
 @media (max-width: 768px) {
   header { font-size: 28px; padding: 20px 20px; }
@@ -276,9 +307,7 @@ footer p span {
   <a href="https://www.instagram.com/mdsamad1779" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Insta
   </a>
-  <a href="https://wa.me/917499665959" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
+ 
 </nav>
 
 <!-- HERO -->
@@ -292,6 +321,11 @@ footer p span {
 <section id="parts">
   <div class="section-title">Available Bike Parts</div>
   <div class="products">
+
+<!-- Sirf image, koi box ya text nahi -->
+<img src="Hero-Honda-TVS-BAJAJ-RE.jpg" alt="Bike Servicing" style="width:100%; height:auto; display:block;">
+
+
     <div class="product-card">
       <img src="All.jpeg" alt="Air Filter" />
       <h3>Bike Servicing</h3>
@@ -351,6 +385,10 @@ footer p span {
   <p><span>👤 Owner:</span> Mohammad Samad</p>
   <p>© 2025 Sarkar Garage. All Rights Reserved.</p>
 </footer>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/917499665959" target="_blank" class="floating-whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
 </body>
 </html>
