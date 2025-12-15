@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sarkar Garage - Bike Servicing & Parts</title>
@@ -10,25 +9,24 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-L11NK4N7CV');
 </script>
 <style>
-  body {
-    margin: 0;
-    font-family: Poppins, Arial, sans-serif;
-    background: #f4f4f4;
-    color: #222;
-    overflow-x: hidden;
-  }
+body {
+  margin: 0;
+  font-family: Poppins, Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  overflow-x: hidden;
+}
 
-/* Header - Stylish & Colorful Left-aligned */
+/* Header */
 header {
   background: linear-gradient(135deg, #ff416c, #ff4b2b, #f9d423, #00c6ff, #8e2de2);
   padding: 25px 40px;
   display: flex;
-  align-items: center; /* vertical center */
-  justify-content: flex-start; /* left alignment */
+  align-items: center;
+  justify-content: flex-start;
   font-size: 35px;
   font-weight: 900;
   letter-spacing: 2px;
@@ -39,12 +37,9 @@ header {
   box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 40px rgba(255,255,255,0.3);
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
-  font-family: 'Pacifico', cursive; /* Stylish cursive font */
+  font-family: 'Pacifico', cursive;
 }
 
-
-
-/* Optional: Separate “Sarkar” with highlight */
 header span {
   background: rgba(0,0,0,0.4);
   padding: 5px 12px;
@@ -54,59 +49,55 @@ header span {
   text-shadow: 0 0 6px rgba(0,0,0,0.5);
 }
 
-/* Animate gradient colors */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+/* Navbar */
+nav {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 12px;
+  border-bottom: 3px solid #ff9800;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
+nav a {
+  color: #ff6d00;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 12px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  will-change: transform;
+}
 
+nav a img {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+}
 
-
-
-
-
-  /* Navbar */
-  nav {
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-    padding: 18px;
-    border-bottom: 3px solid #ff9800;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  nav a {
-    color: #ff6d00;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 700;
-    transition: 0.3s;
-  }
-
+/* Hover only on desktop */
+@media (hover: hover) {
   nav a:hover {
-    color: #000;
     transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
   }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Hero Section - Modern & Premium */
+/* Hero Section */
 .hero {
   height: 120px;
   background: linear-gradient(120deg, #ff6d00, #bd407d, #ffc107);
@@ -123,7 +114,6 @@ header span {
   border-radius: 15px;
 }
 
-/* Contact Badge – Mich Mich Animation */
 .hero .contact {
   background: #25d366;
   padding: 8px 20px;
@@ -137,24 +127,13 @@ header span {
   animation: glowPulse 1.8s infinite ease-in-out;
 }
 
-/* Mich-Mich Glow Animation */
 @keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 8px #25d366;
-  }
-  50% {
-    box-shadow: 0 0 22px #25d366, 0 0 35px rgba(37,211,102,0.7);
-    transform: scale(1.05);
-  }
-  100% {
-    box-shadow: 0 0 8px #25d366;
-  }
+  0% { box-shadow: 0 0 8px #25d366; }
+  50% { box-shadow: 0 0 22px #25d366, 0 0 35px rgba(37,211,102,0.7); transform: scale(1.05); }
+  100% { box-shadow: 0 0 8px #25d366; }
 }
 
-
-
-
-/* Section Title - Premium Stylish */
+/* Section Title */
 .section-title {
   text-align: center;
   font-size: 20px;
@@ -165,17 +144,13 @@ header span {
   position: relative;
   display: inline-block;
   margin: 0 auto;
-
-  /* Beautiful blue gradient text */
   background: linear-gradient(90deg, #007bff, #00c6ff, #4facfe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  font-family: 'Poppins', sans-serif;  /* Stylish font */
+  font-family: 'Poppins', sans-serif;
   animation: titleGlow 3s ease-in-out infinite;
 }
 
-/* Gradient underline bar */
 .section-title::after {
   content: "";
   position: absolute;
@@ -188,83 +163,75 @@ header span {
   background: linear-gradient(90deg, #007bff, #00c6ff, #4facfe);
 }
 
-/* Glowing animation */
 @keyframes titleGlow {
-  0%   { text-shadow: 0 0 8px rgba(0, 153, 255, 0.4); }
-  50%  { text-shadow: 0 0 20px rgba(0, 153, 255, 0.9); }
-  100% { text-shadow: 0 0 8px rgba(0, 153, 255, 0.4); }
+  0% { text-shadow: 0 0 8px rgba(0,153,255,0.4); }
+  50% { text-shadow: 0 0 20px rgba(0,153,255,0.9); }
+  100% { text-shadow: 0 0 8px rgba(0,153,255,0.4); }
 }
 
+/* Products Grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
 
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid #ffe0b2;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
 
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 22px rgba(255, 140, 0, 0.4);
+}
 
+.product-card img {
+  width: 100%;
+  height: 220px;
+  border-radius: 15px;
+  object-fit: cover;
+  border: 2px solid #ff0000;
+}
 
+.product-card h3 {
+  margin: 12px 0 8px;
+  color: #de0202;
+  font-size: 23px;
+  font-weight: 700;
+}
 
+.product-card p {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
 
-  /* Products Grid */
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 25px;
-    padding: 20px;
-  }
+.buy-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-  /* Product Card */
-  .product-card {
-    background: #fff;
-    border-radius: 18px;
-    padding: 18px;
-    text-align: center;
-    transition: 0.3s;
-    border: 1px solid #ffe0b2;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  }
+.buy-btn:hover {
+  transform: scale(1.08);
+  background: #1ebe5d;
+}
 
-  .product-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 22px rgba(255, 140, 0, 0.4);
-  }
-
-  .product-card img {
-    width: 100%;
-    height: 220px;
-    border-radius: 15px;
-    object-fit: cover;
-    border: 2px solid #ff0000;
-  }
-
-  .product-card h3 {
-    margin: 12px 0 8px;
-    color: #de0202;
-    font-size: 23px;
-    font-weight: 700;
-  }
-
-  .product-card p {
-    color: #555;
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
-
-  .buy-btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background: #25d366;
-    color: #fff;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 17px;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-
-  .buy-btn:hover {
-    transform: scale(1.08);
-    background: #1ebe5d;
-  }
-
-
-
+/* Footer */
 footer {
   background: linear-gradient(135deg, #1a1a1a, #0d47a1, #1976d2);
   color: #e3f2fd;
@@ -278,6 +245,7 @@ footer {
   box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
   position: relative;
   overflow: hidden;
+  will-change: transform; /* Mobile safe */
 }
 
 footer p {
@@ -290,6 +258,7 @@ footer p span {
   color: #fff;
 }
 
+/* Footer hover only on desktop */
 @media (hover: hover) {
   footer:hover {
     box-shadow: 0 -5px 30px rgba(25, 118, 210, 0.6);
@@ -297,8 +266,7 @@ footer p span {
   }
 }
 
-
-/* ===================== SCROLLING BIKES ANIMATION ===================== */
+/* Scrolling Bikes */
 .scroll-bike {
   position: absolute;
   top: 1px;
@@ -307,142 +275,51 @@ footer p span {
   left: -200px;
 }
 
-/* First image (bike.png) */
-.scroll-bike:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.scroll-bike:nth-child(2) {
-  animation-delay: 1.0s;
-  margin-top: 20px;   /* Hf को नीचे लाने के लिए */
-}
-.scroll-bike:nth-child(3) {
-  animation-delay: 2.0s;
-  margin-top: 30px;   /* Hf को नीचे लाने के लिए */
-}
-.scroll-bike:nth-child(4) {
-  animation-delay: 3.0s;
-  margin-top: 20px;   /* Hf को नीचे लाने के लिए */
-}
-
+.scroll-bike:nth-child(1) { animation-delay: 0s; }
+.scroll-bike:nth-child(2) { animation-delay: 1s; margin-top: 20px; }
+.scroll-bike:nth-child(3) { animation-delay: 2s; margin-top: 30px; }
+.scroll-bike:nth-child(4) { animation-delay: 3s; margin-top: 20px; }
 
 @keyframes bikeMove {
   0% { transform: translateX(-200px); }
   100% { transform: translateX(calc(100vw + 200px)); }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
 </head>
-
 <body>
-  
-  <img src="bike.png" class="scroll-bike">
-  <img src="Hf.png" class="scroll-bike">
-   <img src="Splender.png" class="scroll-bike">
-    <img src="Shine.png" class="scroll-bike">
 
+<img src="bike.png" class="scroll-bike">
+<img src="Hf.png" class="scroll-bike">
+<img src="Splender.png" class="scroll-bike">
+<img src="Shine.png" class="scroll-bike">
 
 <header>
   <span>SARKAR</span> GARAGE
 </header>
 
-<nav style="display:flex; align-items:center; gap:15px; padding:10px;">
-  <!-- Parts Button -->
-  <a href="#parts" 
-     style="padding:10px 20px; background:linear-gradient(135deg, #6C63FF, #8E7BFF); 
-            color:white; text-decoration:none; border-radius:12px; font-weight:600; 
-            transition:0.3s; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-    Parts
+<nav>
+  <a href="#parts">Parts</a>
+  <a href="#contact">Contact</a>
+  <a href="https://www.instagram.com/mdsamad1779?igsh=cWpodnM0bGdydndv" target="_blank" rel="noreferrer noopener">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Insta
   </a>
-  
-  <!-- Contact Button -->
-  <a href="#contact" 
-     style="padding:10px 20px; background:linear-gradient(135deg, #6C63FF, #8E7BFF); 
-            color:white; text-decoration:none; border-radius:12px; font-weight:600; 
-            transition:0.3s; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-    Contact
+  <a href="https://wa.me/917499665959" target="_blank" rel="noreferrer noopener">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
-  
-  <!-- Instagram Button -->
-  <a href="https://www.instagram.com/mdsamad1779?igsh=cWpodnM0bGdydndv" 
-     target="_blank"
-     style="padding:10px 20px; display:flex; align-items:center; gap:8px; 
-            background:linear-gradient(135deg, #F58529, #DD2A7B, #8134AF); 
-            color:white; text-decoration:none; border-radius:12px; font-weight:600; 
-            transition:0.3s; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
-         alt="Instagram" 
-         style="width:22px; height:22px; border-radius:5px;">
-    Insta
-  </a>
-
-  <!-- WhatsApp Button (Instagram Style) -->
-<a href="https://wa.me/917499665959"
-   target="_blank"
-   style="
-     padding:10px 20px;
-     display:flex;
-     align-items:center;
-     gap:8px;
-     background:linear-gradient(135deg, #25D366, #1EBE5D);
-     color:white;
-     text-decoration:none;
-     border-radius:12px;
-     font-weight:600;
-     transition:0.3s;
-     box-shadow:0 4px 12px rgba(0,0,0,0.15);
-   ">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-       alt="WhatsApp"
-       style="width:22px; height:22px; border-radius:5px;">
-</a>
-
 </nav>
-
-<style>
-  nav a:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  }
-</style>
-
-
-
 
 <div class="hero">
   Premium Bike Servicing
   <br>
-<a href="tel:+917499665959" class="contact">🟢 📞 +91 7499665959</a>
+  <a href="tel:+917499665959" class="contact">🟢 📞 +91 7499665959</a>
 </div>
 
 <section id="parts">
   <div class="section-title">Available Bike Parts</div>
-
   <div class="products">
+    <!-- Products here, same as your original code -->
 
-    <div class="product-card">
+     <div class="product-card">
       <img src="All.jpeg" alt="Air Filter" />
       <h3>Bike Servicing</h3>
       <p>All types of bike service & Repair in our shop.</p>
@@ -503,7 +380,9 @@ footer p span {
     </div>
 
   </div>
+  </div>
 </section>
+
 <footer id="contact">
   <p><span>📞 Contact:</span> +91 7499665959</p>
   <p><span>📍 Location:</span> Near T-Point Mahur, Maharashtra</p>
@@ -511,7 +390,6 @@ footer p span {
   <p><span>👤 Owner:</span> Mohammad Samad</p>
   <p>© 2025 Sarkar Garage. All Rights Reserved.</p>
 </footer>
-
 
 </body>
 </html>
