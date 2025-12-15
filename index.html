@@ -18,7 +18,8 @@
     font-family: Poppins, Arial, sans-serif;
     background: #f4f4f4;
     color: #222;
-    overflow-x: hidden;
+     width: 100%;
+  overflow-x: hidden !important;
   }
 
 /* Header - Stylish & Colorful Left-aligned */
@@ -78,6 +79,7 @@ header span {
     position: sticky;
     top: 0;
     z-index: 100;
+     flex-wrap: wrap;
   }
 
   nav a {
@@ -229,12 +231,12 @@ header span {
     height: 220px;
     border-radius: 15px;
     object-fit: cover;
-    border: 2px solid #ff9800;
+    border: 2px solid #ff0000;
   }
 
   .product-card h3 {
     margin: 12px 0 8px;
-    color: #ff6d00;
+    color: #de0202;
     font-size: 23px;
     font-weight: 700;
   }
@@ -303,6 +305,7 @@ footer:hover {
   width: 140px;
   animation: bikeMove 5s linear infinite;
   left: -200px;
+  overflow: hidden;
 }
 
 /* First image (bike.png) */
@@ -325,9 +328,10 @@ footer:hover {
 
 
 @keyframes bikeMove {
-  0% { transform: translateX(-200px); }
-  100% { transform: translateX(calc(100vw + 200px)); }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
 }
+
 
 
 
