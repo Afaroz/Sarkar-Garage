@@ -250,6 +250,19 @@ footer p span {
   }
 }
 
+
+/* Mobile friendly scrolling bikes */
+@media (max-width: 768px) {
+  .scroll-bike {
+    position: fixed; /* absolute ki jagah */
+    top: auto;       /* top fix na karein */
+    bottom: 10px;    /* ya top, jahan dikhaana ho */
+    width: 100px;    /* responsive size */
+    animation: bikeMove 6s linear infinite;
+  }
+}
+
+
 /* ===================== SCROLLING BIKES ===================== */
 .scroll-bike {
   position: absolute;
