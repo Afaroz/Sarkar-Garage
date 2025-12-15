@@ -264,7 +264,6 @@ header span {
 
 
 
-
 .floating-whatsapp {
   position: fixed;
   bottom: 25px;
@@ -276,23 +275,36 @@ header span {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 34px;
-  color: #fff;
   text-decoration: none;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 9999; /* Always on top */
+  box-shadow: 0 0 0 rgba(37, 211, 102, 0.7);
+  animation: whatsappPulse 1.6s infinite;
+  z-index: 9999;
 }
 
 .floating-whatsapp img {
-  display: block; /* Prevent blinking */
   width: 40px;
   height: 40px;
 }
 
+/* Hover pe thoda aur smooth effect */
 .floating-whatsapp:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  transform: scale(1.15);
+}
+
+/* ===================== MICH-MICH ANIMATION ===================== */
+@keyframes whatsappPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px 15px rgba(37, 211, 102, 0);
+    transform: scale(1.08);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    transform: scale(1);
+  }
 }
 
  /* ===================== FOOTER ===================== */
