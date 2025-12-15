@@ -277,32 +277,45 @@ footer p span {
     height: 35px;
 }
 
+
+
+
+
 /* ===================== HEADER BIKE ICON ===================== */
 .site-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
+/* Desktop size */
 .bike-logo {
-  width: 55px;          /* desktop size */
+  width: 120px;              /* 🔥 pehle 55px tha */
   height: auto;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.9));
-  animation: bikeShine 2.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,1));
+  animation: bikeShine 2.2s infinite ease-in-out;
 }
 
+/* Shine animation */
 @keyframes bikeShine {
   0% {
-    transform: translateY(0);
-    filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
   }
   50% {
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 14px rgba(255,255,255,1));
+    transform: translateY(-4px) scale(1.06);
+    filter: drop-shadow(0 0 20px rgba(255,255,255,1));
   }
   100% {
-    transform: translateY(0);
-    filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
+  }
+}
+
+/* 📱 Mobile size */
+@media (max-width: 768px) {
+  .bike-logo {
+    width: 100px;          /* mobile pe bhi clear dikhe */
   }
 }
 
@@ -397,13 +410,6 @@ footer p span {
     line-height: 1.6;
     text-align: center;
   }
-}
-
-
-
-/* Mobile bike icon size */
-.bike-logo {
-  width: 38px;     /* mobile size */
 }
 
 
