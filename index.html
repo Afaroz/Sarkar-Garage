@@ -201,29 +201,6 @@ footer p span { font-weight:700; color:#fff; }
 .scroll-bike:nth-child(4){ animation-delay:3s; margin-top:20px; }
 @keyframes bikeMove{ 0%{ transform:translateX(-200px); } 100%{ transform:translateX(calc(100vw + 200px)); } }
 
-/* ===================== MOBILE FRIENDLY SCROLLING ===================== */
-@media (max-width:768px){
-  .scroll-container {
-    height: 120px; /* height of scroll area */
-  }
-  .scroll-bike {
-    position: absolute;
-    top: 2; /* sab ek line me */
-    width: 140px;
-    animation: bikeMoveMobile 5s linear infinite;
-  }
-  /* sequence delays */
-  .scroll-bike:nth-child(1){ animation-delay: 0s; }
-  .scroll-bike:nth-child(2){ animation-delay: 1s; }
-  .scroll-bike:nth-child(3){ animation-delay: 2s; }
-  .scroll-bike:nth-child(4){ animation-delay: 3s; }
-
-  @keyframes bikeMoveMobile{
-    0%{ transform: translateX(-120px); }
-    100%{ transform: translateX(calc(100vw + 120px)); }
-  }
-}
-
 </style>
 </head>
 <body>
