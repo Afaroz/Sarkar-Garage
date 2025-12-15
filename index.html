@@ -95,7 +95,6 @@ nav a img {
     box-shadow: 0 6px 16px rgba(0,0,0,0.25);
   }
 }
-
 /* ===================== HERO (AI MODERN) ===================== */
 .hero {
   height: 120px;
@@ -118,6 +117,8 @@ nav a img {
     0 0 30px rgba(0, 255, 255, 0.15),
     inset 0 0 25px rgba(255,255,255,0.05);
 }
+
+/* ===================== CONTACT BUTTON ===================== */
 .hero .contact {
   background: linear-gradient(135deg, #00f5ff, #00c6ff);
   padding: 9px 26px;
@@ -134,10 +135,27 @@ nav a img {
     0 0 18px rgba(0, 245, 255, 0.8),
     0 0 40px rgba(0, 198, 255, 0.6);
 }
+
+/* ===================== AI GLOW ANIMATION ===================== */
 @keyframes glowPulseAI {
-  0% { box-shadow:0 0 12px rgba(0,245,255,0.6),0 0 25px rgba(0,198,255,0.4); transform: scale(1); }
-  50% { box-shadow:0 0 25px rgba(0,245,255,1),0 0 55px rgba(0,198,255,0.9); transform: scale(1.08); }
-  100% { box-shadow:0 0 12px rgba(0,245,255,0.6),0 0 25px rgba(0,198,255,0.4); transform: scale(1); }
+  0% {
+    box-shadow:
+      0 0 12px rgba(0,245,255,0.6),
+      0 0 25px rgba(0,198,255,0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(0,245,255,1),
+      0 0 55px rgba(0,198,255,0.9);
+    transform: scale(1.08);
+  }
+  100% {
+    box-shadow:
+      0 0 12px rgba(0,245,255,0.6),
+      0 0 25px rgba(0,198,255,0.4);
+    transform: scale(1);
+  }
 }
 
 /* ===================== SECTION TITLE ===================== */
@@ -168,48 +186,131 @@ nav a img {
   border-radius: 10px;
   background: linear-gradient(90deg, #007bff, #00c6ff, #4facfe);
 }
-@keyframes titleGlow { 0%{text-shadow:0 0 8px rgba(0,153,255,0.4);} 50%{text-shadow:0 0 20px rgba(0,153,255,0.9);} 100%{text-shadow:0 0 8px rgba(0,153,255,0.4);} }
+@keyframes titleGlow {
+  0% { text-shadow: 0 0 8px rgba(0,153,255,0.4); }
+  50% { text-shadow: 0 0 20px rgba(0,153,255,0.9); }
+  100% { text-shadow: 0 0 8px rgba(0,153,255,0.4); }
+}
 
 /* ===================== PRODUCTS ===================== */
-.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap:25px; padding:20px; }
-.product-card { background:#fff; border-radius:18px; padding:18px; text-align:center; transition:0.3s; border:1px solid #ffe0b2; box-shadow:0 4px 14px rgba(0,0,0,0.1); }
-.product-card:hover { transform:scale(1.03); box-shadow:0 8px 22px rgba(255,140,0,0.4); }
-.product-card img { width:100%; height:220px; border-radius:15px; object-fit:cover; border:2px solid #ff0000; }
-.product-card h3 { margin:12px 0 8px; color:#de0202; font-size:23px; font-weight:700; }
-.product-card p { color:#555; font-size:15px; margin-bottom:15px; }
-.buy-btn { display:inline-block; padding:12px 28px; background:#25d366; color:#fff; border-radius:12px; font-weight:700; font-size:17px; text-decoration:none; transition:0.3s; }
-.buy-btn:hover { transform:scale(1.08); background:#1ebe5d; }
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid #ffe0b2;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 22px rgba(255, 140, 0, 0.4);
+}
+.product-card img {
+  width: 100%;
+  height: 220px;
+  border-radius: 15px;
+  object-fit: cover;
+  border: 2px solid #ff0000;
+}
+.product-card h3 {
+  margin: 12px 0 8px;
+  color: #de0202;
+  font-size: 23px;
+  font-weight: 700;
+}
+.product-card p {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.buy-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.buy-btn:hover {
+  transform: scale(1.08);
+  background: #1ebe5d;
+}
 
 /* ===================== FOOTER ===================== */
-footer { background: linear-gradient(135deg,#1a1a1a,#0d47a1,#1976d2); color:#e3f2fd; padding:45px 20px; text-align:center; margin-top:60px; font-size:18px; letter-spacing:1px; border-top-left-radius:25px; border-top-right-radius:25px; box-shadow:0 -5px 20px rgba(0,0,0,0.4); position:relative; overflow:hidden; will-change:transform; }
-footer p { margin:8px 0; font-weight:500; }
-footer p span { font-weight:700; color:#fff; }
-@media (hover:hover){ footer:hover{ box-shadow:0 -5px 30px rgba(25,118,210,0.6); transition:0.4s; } }
+footer {
+  background: linear-gradient(135deg, #1a1a1a, #0d47a1, #1976d2);
+  color: #e3f2fd;
+  padding: 45px 20px;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+footer p {
+  margin: 8px 0;
+  font-weight: 500;
+}
+footer p span {
+  font-weight: 700;
+  color: #fff;
+}
+  
+/* Footer hover only on desktop */
+@media (hover: hover) {
+  footer:hover {
+    box-shadow: 0 -5px 30px rgba(25, 118, 210, 0.6);
+    transition: 0.4s;
+  }
+}
+
+
+/* Mobile friendly scrolling bikes */
+@media (max-width: 768px) {
+  .scroll-bike {
+    position: fixed; /* absolute ki jagah */
+    top: auto;       /* top fix na karein */
+    bottom: 10px;    /* ya top, jahan dikhaana ho */
+    width: 100px;    /* responsive size */
+    animation: bikeMove 6s linear infinite;
+  }
+}
+
 
 /* ===================== SCROLLING BIKES ===================== */
 .scroll-bike {
-  position:absolute;
-  top:1px;
-  width:140px;
+  position: absolute;
+  top: 1px;
+  width: 140px;
   animation: bikeMove 5s linear infinite;
-  left:-200px;
-  z-index:50;
+  left: -200px;
 }
-.scroll-bike:nth-child(1){ animation-delay:0s; }
-.scroll-bike:nth-child(2){ animation-delay:1s; margin-top:20px; }
-.scroll-bike:nth-child(3){ animation-delay:2s; margin-top:30px; }
-.scroll-bike:nth-child(4){ animation-delay:3s; margin-top:20px; }
-@keyframes bikeMove{ 0%{ transform:translateX(-200px); } 100%{ transform:translateX(calc(100vw + 200px)); } }
-
+.scroll-bike:nth-child(1) { animation-delay: 0s; }
+.scroll-bike:nth-child(2) { animation-delay: 1s; margin-top: 20px; }
+.scroll-bike:nth-child(3) { animation-delay: 2s; margin-top: 30px; }
+.scroll-bike:nth-child(4) { animation-delay: 3s; margin-top: 20px; }
+@keyframes bikeMove {
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(calc(100vw + 200px)); }
+}
 </style>
 </head>
 <body>
-
-
-
-<!-- HEADER -->
-<header><span>SARKAR</span> GARAGE</header>
-
 
 <!-- SCROLLING IMAGES -->
 <img src="bike.png" class="scroll-bike">
@@ -217,17 +318,20 @@ footer p span { font-weight:700; color:#fff; }
 <img src="Splender.png" class="scroll-bike">
 <img src="Shine.png" class="scroll-bike">
 
+<!-- HEADER -->
+<header><span>SARKAR</span> GARAGE</header>
 
 <!-- NAVBAR -->
 <nav>
 <a href="#contact" class="scroll-link">Contact</a>
 <a href="#parts" class="scroll-link">Parts</a>
-<a href="https://www.instagram.com/mdsamad1779?igsh=cWpodnM0bGdydndv" target="_blank" rel="noreferrer noopener">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Insta
-</a>
-<a href="https://wa.me/917499665959" target="_blank" rel="noreferrer noopener">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+
+  <a href="https://www.instagram.com/mdsamad1779?igsh=cWpodnM0bGdydndv" target="_blank" rel="noreferrer noopener">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Insta
+  </a>
+  <a href="https://wa.me/917499665959" target="_blank" rel="noreferrer noopener">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 </nav>
 
 <!-- HERO -->
@@ -241,12 +345,14 @@ footer p span { font-weight:700; color:#fff; }
 <section id="parts">
   <div class="section-title">Available Bike Parts</div>
   <div class="products">
-    <div class="product-card">
-      <img src="All.jpeg" alt="Bike Servicing" />
+    <!-- Product cards same as your previous code -->
+       <div class="product-card">
+      <img src="All.jpeg" alt="Air Filter" />
       <h3>Bike Servicing</h3>
       <p>All types of bike service & Repair in our shop.</p>
-      <a class="buy-btn" href="https://wa.me/917499665959?text=I want Bike Servicing">Buy on WhatsApp</a>
+      <a class="buy-btn" href="https://wa.me/917499665959?text=I want Air Filter">Buy on WhatsApp</a>
     </div>
+
 
     <div class="product-card">
       <img src="oil.jpeg" alt="Engine Oil" />
@@ -269,33 +375,37 @@ footer p span { font-weight:700; color:#fff; }
       <a class="buy-btn" href="https://wa.me/917499665959?text=I want Air Filter">Buy on WhatsApp</a>
     </div>
 
-    <div class="product-card">
-      <img src="Parts.jpeg" alt="Spare Parts" />
+
+     
+
+     <div class="product-card">
+      <img src="Parts.jpeg" alt="Air Filter" />
       <h3>Spare Parts</h3>
       <p>All types of spare parts available into Our Shop.</p>
-      <a class="buy-btn" href="https://wa.me/917499665959?text=I want to buy my bikes spare parts">Buy on WhatsApp</a>
+      <a class="buy-btn" href="https://wa.me/917499665959?text=I want to buy my bikes spare parts so let me know the price.">Buy on WhatsApp</a>
     </div>
 
-    <div class="product-card">
-      <img src="cover.jpeg" alt="Seat Cover" />
+     <div class="product-card">
+      <img src="cover.jpeg" alt="Air Filter" />
       <h3>Seat Cover</h3>
       <p>All types of seat cover available into our shop.</p>
-      <a class="buy-btn" href="https://wa.me/917499665959?text=I want to buy seat cover for my bike">Buy on WhatsApp</a>
+      <a class="buy-btn" href="https://wa.me/917499665959?text=I want to buy seat cover for my bike for better look so let me know the price range.">Buy on WhatsApp</a>
     </div>
 
-    <div class="product-card">
-      <img src="Plug.jpeg" alt="Spark Plug" />
+      <div class="product-card">
+      <img src="Plug.jpeg" alt="Air Filter" />
       <h3>Spark Plug</h3>
       <p>All types of spark plug available in our shop.</p>
-      <a class="buy-btn" href="https://wa.me/917499665959?text=I want to change my bike spark plug">Buy on WhatsApp</a>
+      <a class="buy-btn" href="https://wa.me/917499665959?text=I want to change my bike spark plug so let me know the price for spark plug.">Buy on WhatsApp</a>
     </div>
 
-    <div class="product-card">
-      <img src="Gear.jpg" alt="Engine Work" />
+     <div class="product-card">
+      <img src="Gear.jpg" alt="Air Filter" />
       <h3>Engine Work</h3>
       <p>All types of bikes Engine work available in our shop.</p>
-      <a class="buy-btn" href="https://wa.me/917499665959?text=I want to do my bikes engine work">Buy on WhatsApp</a>
+      <a class="buy-btn" href="https://wa.me/917499665959?text=I Want to do my bikes engine work so let me know the price.">Buy on WhatsApp</a>
     </div>
+
   </div>
 </section>
 
@@ -307,7 +417,6 @@ footer p span { font-weight:700; color:#fff; }
   <p><span>👤 Owner:</span> Mohammad Samad</p>
   <p>© 2025 Sarkar Garage. All Rights Reserved.</p>
 </footer>
-
 <!-- ===================== SCROLL LINK FIX FOR MOBILE ===================== -->
 <script>
 document.querySelectorAll('nav a[href^="#"]').forEach(link => {
@@ -318,10 +427,14 @@ document.querySelectorAll('nav a[href^="#"]').forEach(link => {
       const headerOffset = 80; // navbar height
       const elementPosition = target.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   });
 });
+
 </script>
 
 </body>
