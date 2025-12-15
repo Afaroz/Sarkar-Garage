@@ -265,10 +265,8 @@ header span {
 
 
 
-
- /* ===================== FOOTER ===================== */
 footer {
-  background: linear-gradient(135deg, #1a1a1a, #0d47a1, #1976d2); /* Premium dark blue gradient */
+  background: linear-gradient(135deg, #1a1a1a, #0d47a1, #1976d2);
   color: #e3f2fd;
   padding: 45px 20px;
   text-align: center;
@@ -278,6 +276,8 @@ footer {
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
 }
 
 footer p {
@@ -290,10 +290,11 @@ footer p span {
   color: #fff;
 }
 
-/* Smooth subtle glow */
-footer:hover {
-  box-shadow: 0 -5px 30px rgba(25, 118, 210, 0.6);
-  transition: 0.4s;
+@media (hover: hover) {
+  footer:hover {
+    box-shadow: 0 -5px 30px rgba(25, 118, 210, 0.6);
+    transition: 0.4s;
+  }
 }
 
 
