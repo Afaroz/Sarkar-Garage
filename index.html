@@ -204,12 +204,10 @@ footer p span { font-weight:700; color:#fff; }
 /* ===================== MOBILE FRIENDLY SCROLLING ===================== */
 @media (max-width:768px){
   .scroll-bike{
-    position:apsolute;
-  top:1px;
-  width:140px;
-  animation: bikeMove 5s linear infinite;
-  left:-200px;
-  z-index:50;
+    position:fixed;
+    bottom:10px;
+    width:100px;
+    animation: bikeMoveMobile 6s linear infinite;
   }
   .scroll-bike:nth-child(1){ animation-delay:0s; margin-top:0; }
   .scroll-bike:nth-child(2){ animation-delay:1.0s; margin-top:0; }
