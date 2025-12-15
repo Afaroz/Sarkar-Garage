@@ -299,10 +299,10 @@ footer:hover {
 /* ===================== SCROLLING BIKES ANIMATION ===================== */
 .scroll-bike {
   position: absolute;
-  top: 5px;
+  top: 1px;
   width: 140px;
-  animation: bikeMove 6s linear infinite;
-  left: 0;
+  animation: bikeMove 5s linear infinite;
+  left: -200px;
 }
 
 /* First image (bike.png) */
@@ -325,10 +325,9 @@ footer:hover {
 
 
 @keyframes bikeMove {
-  0% { transform: translateX(-150px); }
-  100% { transform: translateX(100vw); }
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(calc(100vw + 200px)); }
 }
-
 
 
 
