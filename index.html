@@ -277,6 +277,35 @@ footer p span {
     height: 35px;
 }
 
+/* ===================== HEADER BIKE ICON ===================== */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bike-logo {
+  width: 55px;          /* desktop size */
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.9));
+  animation: bikeShine 2.5s infinite ease-in-out;
+}
+
+@keyframes bikeShine {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+  }
+  50% {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 14px rgba(255,255,255,1));
+  }
+  100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+  }
+}
+
 
 
 
@@ -370,12 +399,22 @@ footer p span {
   }
 }
 
+
+
+/* Mobile bike icon size */
+.bike-logo {
+  width: 38px;     /* mobile size */
+}
+
+
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header><span>SARKAR</span> GARAGE</header>
+<header class="site-header">
+  <span>SARKAR</span> GARAGE
+  <img src="Shine.png" alt="Motorcycle" class="bike-logo">
+</header>
 
 <!-- NAVBAR -->
 <nav>
