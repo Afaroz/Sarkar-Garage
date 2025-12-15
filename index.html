@@ -81,21 +81,20 @@ nav a {
   align-items: center;
   gap: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  will-change: transform;
 }
 nav a img {
   width: 22px;
   height: 22px;
   border-radius: 5px;
 }
-/* Hover effect only for desktop */
 @media (hover: hover) {
   nav a:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(0,0,0,0.25);
   }
 }
-/* ===================== HERO (AI MODERN) ===================== */
+
+/* ===================== HERO ===================== */
 .hero {
   height: 120px;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
@@ -106,19 +105,13 @@ nav a img {
   font-size: 30px;
   font-weight: 900;
   color: #e6f7ff;
-  text-shadow: 
-    0 0 12px rgba(0, 255, 255, 0.6),
-    0 0 25px rgba(0, 255, 255, 0.3);
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.6), 0 0 25px rgba(0, 255, 255, 0.3);
   border-bottom: 2px solid rgba(0, 255, 255, 0.4);
   position: relative;
   border-radius: 16px;
   backdrop-filter: blur(6px);
-  box-shadow: 
-    0 0 30px rgba(0, 255, 255, 0.15),
-    inset 0 0 25px rgba(255,255,255,0.05);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.15), inset 0 0 25px rgba(255,255,255,0.05);
 }
-
-/* ===================== CONTACT BUTTON ===================== */
 .hero .contact {
   background: linear-gradient(135deg, #00f5ff, #00c6ff);
   padding: 9px 26px;
@@ -127,35 +120,14 @@ nav a img {
   font-size: 18px;
   font-weight: 800;
   color: #002b36;
-  text-shadow: none;
   display: inline-block;
   letter-spacing: 0.5px;
   animation: glowPulseAI 2s infinite ease-in-out;
-  box-shadow: 
-    0 0 18px rgba(0, 245, 255, 0.8),
-    0 0 40px rgba(0, 198, 255, 0.6);
+  box-shadow: 0 0 18px rgba(0, 245, 255, 0.8), 0 0 40px rgba(0, 198, 255, 0.6);
 }
-
-/* ===================== AI GLOW ANIMATION ===================== */
 @keyframes glowPulseAI {
-  0% {
-    box-shadow:
-      0 0 12px rgba(0,245,255,0.6),
-      0 0 25px rgba(0,198,255,0.4);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow:
-      0 0 25px rgba(0,245,255,1),
-      0 0 55px rgba(0,198,255,0.9);
-    transform: scale(1.08);
-  }
-  100% {
-    box-shadow:
-      0 0 12px rgba(0,245,255,0.6),
-      0 0 25px rgba(0,198,255,0.4);
-    transform: scale(1);
-  }
+  0%, 100% { transform: scale(1); box-shadow:0 0 12px rgba(0,245,255,0.6); }
+  50% { transform: scale(1.08); box-shadow:0 0 25px rgba(0,245,255,1); }
 }
 
 /* ===================== SECTION TITLE ===================== */
@@ -270,8 +242,6 @@ footer p span {
   font-weight: 700;
   color: #fff;
 }
-  
-/* Footer hover only on desktop */
 @media (hover: hover) {
   footer:hover {
     box-shadow: 0 -5px 30px rgba(25, 118, 210, 0.6);
@@ -279,57 +249,34 @@ footer p span {
   }
 }
 
-
-/* Mobile friendly scrolling bikes */
+/* ===================== MOBILE SPECIFIC ===================== */
 @media (max-width: 768px) {
-  .scroll-bike {
-    position: fixed; /* absolute ki jagah */
-    top: auto;       /* top fix na karein */
-    bottom: 10px;    /* ya top, jahan dikhaana ho */
-    width: 100px;    /* responsive size */
-    animation: bikeMove 6s linear infinite;
-  }
-}
-
-
-/* ===================== SCROLLING BIKES ===================== */
-.scroll-bike {
-  position: absolute;
-  top: 1px;
-  width: 140px;
-  animation: bikeMove 5s linear infinite;
-  left: -200px;
-}
-.scroll-bike:nth-child(1) { animation-delay: 0s; }
-.scroll-bike:nth-child(2) { animation-delay: 1s; margin-top: 20px; }
-.scroll-bike:nth-child(3) { animation-delay: 2s; margin-top: 30px; }
-.scroll-bike:nth-child(4) { animation-delay: 3s; margin-top: 20px; }
-@keyframes bikeMove {
-  0% { transform: translateX(-200px); }
-  100% { transform: translateX(calc(100vw + 200px)); }
+  header { font-size: 28px; padding: 20px 20px; }
+  nav a { font-size: 14px; padding: 8px 12px; }
+  .hero { font-size: 24px; height: auto; padding: 40px 20px; }
+  .hero .contact { font-size: 16px; padding: 8px 20px; }
+  .products { grid-template-columns: 1fr; gap: 15px; padding: 15px; }
+  .product-card img { height: 180px; }
+  .product-card h3 { font-size: 20px; }
+  .product-card p { font-size: 14px; }
+  .buy-btn { padding: 10px 20px; font-size: 15px; }
+  footer { font-size: 16px; padding: 30px 15px; }
 }
 </style>
 </head>
 <body>
-
-<!-- SCROLLING IMAGES -->
-<img src="bike.png" class="scroll-bike">
-<img src="Hf.png" class="scroll-bike">
-<img src="Splender.png" class="scroll-bike">
-<img src="Shine.png" class="scroll-bike">
 
 <!-- HEADER -->
 <header><span>SARKAR</span> GARAGE</header>
 
 <!-- NAVBAR -->
 <nav>
-<a href="#contact" class="scroll-link">Contact</a>
-<a href="#parts" class="scroll-link">Parts</a>
-
-  <a href="https://www.instagram.com/mdsamad1779?igsh=cWpodnM0bGdydndv" target="_blank" rel="noreferrer noopener">
+  <a href="#contact" class="scroll-link">Contact</a>
+  <a href="#parts" class="scroll-link">Parts</a>
+  <a href="https://www.instagram.com/mdsamad1779" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Insta
   </a>
-  <a href="https://wa.me/917499665959" target="_blank" rel="noreferrer noopener">
+  <a href="https://wa.me/917499665959" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 </nav>
@@ -345,67 +292,54 @@ footer p span {
 <section id="parts">
   <div class="section-title">Available Bike Parts</div>
   <div class="products">
-    <!-- Product cards same as your previous code -->
-       <div class="product-card">
+    <div class="product-card">
       <img src="All.jpeg" alt="Air Filter" />
       <h3>Bike Servicing</h3>
       <p>All types of bike service & Repair in our shop.</p>
       <a class="buy-btn" href="https://wa.me/917499665959?text=I want to do my bike servicing so let me know the price.">Buy on WhatsApp</a>
     </div>
-
-
     <div class="product-card">
       <img src="oil.jpeg" alt="Engine Oil" />
       <h3>Engine Oil</h3>
       <p>High-performance engine oil for all motorcycles.</p>
       <a class="buy-btn" href="https://wa.me/917499665959?text=I want to change my bike oil so let me know the oil price.">Buy on WhatsApp</a>
     </div>
-
     <div class="product-card">
       <img src="liner.jpeg" alt="Brake Pads" />
       <h3>Break Liner</h3>
       <p>All types of bikes High quality break liner available.</p>
       <a class="buy-btn" href="https://wa.me/917499665959?text=I want to change my bike break liner so let me know the price for this.">Buy on WhatsApp</a>
     </div>
-
     <div class="product-card">
       <img src="filter.jpeg" alt="Air Filter" />
       <h3>Air Filter</h3>
       <p>Premium filter for better mileage and engine health.</p>
       <a class="buy-btn" href="https://wa.me/917499665959?text=I want to change the Air Filter so let me know the price.">Buy on WhatsApp</a>
     </div>
-
-
-     
-
-     <div class="product-card">
-      <img src="Parts.jpeg" alt="Air Filter" />
+    <div class="product-card">
+      <img src="Parts.jpeg" alt="Spare Parts" />
       <h3>Spare Parts</h3>
-      <p>All types of spare parts available into Our Shop.</p>
+      <p>All types of spare parts available in our Shop.</p>
       <a class="buy-btn" href="https://wa.me/917499665959?text=I want to buy my bikes spare parts so let me know the price.">Buy on WhatsApp</a>
     </div>
-
-     <div class="product-card">
-      <img src="cover.jpeg" alt="Air Filter" />
+    <div class="product-card">
+      <img src="cover.jpeg" alt="Seat Cover" />
       <h3>Seat Cover</h3>
-      <p>All types of seat cover available into our shop.</p>
+      <p>All types of seat cover available in our shop.</p>
       <a class="buy-btn" href="https://wa.me/917499665959?text=I want to buy seat cover for my bike for better look so let me know the price range.">Buy on WhatsApp</a>
     </div>
-
-      <div class="product-card">
-      <img src="Plug.jpeg" alt="Air Filter" />
+    <div class="product-card">
+      <img src="Plug.jpeg" alt="Spark Plug" />
       <h3>Spark Plug</h3>
       <p>All types of spark plug available in our shop.</p>
       <a class="buy-btn" href="https://wa.me/917499665959?text=I want to change my bike spark plug so let me know the price for spark plug.">Buy on WhatsApp</a>
     </div>
-
-     <div class="product-card">
-      <img src="Gear.jpg" alt="Air Filter" />
+    <div class="product-card">
+      <img src="Gear.jpg" alt="Engine Work" />
       <h3>Engine Work</h3>
       <p>All types of bikes Engine work available in our shop.</p>
       <a class="buy-btn" href="https://wa.me/917499665959?text=I Want to do my bikes engine work so let me know the price.">Buy on WhatsApp</a>
     </div>
-
   </div>
 </section>
 
@@ -417,5 +351,6 @@ footer p span {
   <p><span>👤 Owner:</span> Mohammad Samad</p>
   <p>© 2025 Sarkar Garage. All Rights Reserved.</p>
 </footer>
+
 </body>
 </html>
