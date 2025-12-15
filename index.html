@@ -203,22 +203,27 @@ footer p span { font-weight:700; color:#fff; }
 
 /* ===================== MOBILE FRIENDLY SCROLLING ===================== */
 @media (max-width:768px){
-  .scroll-bike{
-    position:fixed;
-    bottom:10px;
-    width:100px;
-    animation: bikeMoveMobile 6s linear infinite;
+  .scroll-container {
+    height: 120px; /* height of scroll area */
   }
-  .scroll-bike:nth-child(1){ animation-delay:0s; margin-top:0; }
-  .scroll-bike:nth-child(2){ animation-delay:1.0s; margin-top:0; }
-  .scroll-bike:nth-child(3){ animation-delay:2.0s; margin-top:0; }
-  .scroll-bike:nth-child(4){ animation-delay:3.0s; margin-top:0; }
+  .scroll-bike {
+    position: absolute;
+    top: 0; /* sab ek line me */
+    width: 100px;
+    animation: bikeMoveMobile 5s linear infinite;
+  }
+  /* sequence delays */
+  .scroll-bike:nth-child(1){ animation-delay: 0s; }
+  .scroll-bike:nth-child(2){ animation-delay: 1s; }
+  .scroll-bike:nth-child(3){ animation-delay: 2s; }
+  .scroll-bike:nth-child(4){ animation-delay: 3s; }
 
   @keyframes bikeMoveMobile{
-    0%{ transform:translateX(-120px); }
-    100%{ transform:translateX(calc(100vw + 120px)); }
+    0%{ transform: translateX(-120px); }
+    100%{ transform: translateX(calc(100vw + 120px)); }
   }
 }
+
 </style>
 </head>
 <body>
