@@ -425,6 +425,11 @@ footer p span {
     width: 100%;
     overflow: hidden;
 }
+/* Slider */
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
 
 /* Slider track */
 .slides {
@@ -433,7 +438,7 @@ footer p span {
     animation: slide 6s infinite;
 }
 
-/* Desktop default */
+/* Desktop */
 .slides img {
     width: 50%;
     height: 350px;
@@ -450,14 +455,8 @@ footer p span {
 
 /* Mobile */
 @media (max-width: 768px) {
-    .slides {
-        width: 200%;
-    }
-
     .slides img {
-        width: 100%;
-        height: 220px;      /* 🔥 mobile ke liye proper height */
-        object-fit: cover;
+        height: 220px;   /* ✅ sirf height change */
     }
 }
 
