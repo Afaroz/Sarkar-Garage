@@ -57,6 +57,7 @@ header span {
   100% { background-position: 0% 50%; }
 }
 
+
 /* ===================== NAVBAR ===================== */
 nav {
   background: #ffffff;
@@ -413,6 +414,49 @@ footer p span {
 }
 
 
+
+
+
+
+
+
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 200%;
+    animation: slide 6s infinite;
+}
+
+.slides img {
+    width: 50%;            /* 🔥 MOST IMPORTANT FIX */
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .slides img {
+        height: 300px;
+    }
+}
+
+@keyframes slide {
+    0%   { transform: translateX(0); }
+    45%  { transform: translateX(0); }
+    55%  { transform: translateX(-50%); }
+    100% { transform: translateX(-50%); }
+}
+
+
+
+
+
 </style>
 </head>
 <body>
@@ -432,6 +476,7 @@ footer p span {
  
 </nav>
 
+
 <!-- HERO -->
 <div class="hero">
   Premium Bike Servicing
@@ -439,13 +484,16 @@ footer p span {
   <a href="tel:+917499665959" class="contact">🟢 📞 +91 7499665959</a>
 </div>
 
+<div class="slider">
+    <div class="slides">
+        <img src="Milega.jpeg" alt="Bike Servicing">
+        <img src="Milega2.jpeg" alt="Bike Servicing 2">
+    </div>
+</div>
 <!-- PRODUCTS SECTION -->
 <section id="parts">
   <div class="section-title">Available Bike Parts</div>
   <div class="products">
-
-<!-- Sirf image, koi box ya text nahi -->
-<img src="Hero-Honda-TVS-BAJAJ-RE.jpg" alt="Bike Servicing" style="width:100%; height:auto; display:block;">
 
 
     <div class="product-card">
