@@ -23,7 +23,6 @@ body {
   color: #222;
   overflow-x: hidden;
 }
-
 /* ===================== HEADER ===================== */
 header {
   background: linear-gradient(135deg, #ff416c, #ff4b2b, #f9d423, #00c6ff, #8e2de2);
@@ -36,21 +35,29 @@ header {
   letter-spacing: 2px;
   color: #fff;
   text-shadow: 0 2px 6px rgba(0,0,0,0.5), 0 0 15px rgba(255,255,255,0.6);
-  border-radius: 25px;
+
+  /* ROUND REMOVE */
+  border-radius: 0;
+
   border: 3px solid #fff;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 40px rgba(255,255,255,0.3);
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
   font-family: 'Pacifico', cursive;
 }
+
 header span {
   background: rgba(0,0,0,0.4);
   padding: 5px 12px;
-  border-radius: 10px;
+
+  /* optional – span ko bhi straight */
+  border-radius: 0;
+
   margin-right: 10px;
   color: #ffeb3b;
   text-shadow: 0 0 6px rgba(0,0,0,0.5);
 }
+
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -221,32 +228,55 @@ nav a img {
 
 /* ===================== FOOTER ===================== */
 footer {
-  background: linear-gradient(135deg, #1a1a1a, #0d47a1, #1976d2);
-  color: #e3f2fd;
-  padding: 45px 20px;
+  background: linear-gradient(180deg, #0f172a, #020617); /* premium dark */
+  color: #cbd5f5;
+  padding: 48px 20px 40px;
   text-align: center;
-  margin-top: 60px;
-  font-size: 18px;
-  letter-spacing: 1px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+  margin-top: 70px;
+
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+
+  border-radius: 0;
+  box-shadow: 0 -10px 30px rgba(2, 6, 23, 0.8);
   position: relative;
   overflow: hidden;
-  will-change: transform;
 }
+
+/* Soft top divider glow */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56,189,248,0.6),
+    transparent
+  );
+}
+
+/* Text */
 footer p {
-  margin: 8px 0;
-  font-weight: 500;
+  margin: 10px 0;
+  font-weight: 400;
+  opacity: 0.9;
 }
+
 footer p span {
-  font-weight: 700;
-  color: #fff;
+  font-weight: 600;
+  color: #ffffff;
 }
+
+/* Hover only on desktop */
 @media (hover: hover) {
   footer:hover {
-    box-shadow: 0 -5px 30px rgba(25, 118, 210, 0.6);
-    transition: 0.4s;
+    box-shadow: 0 -12px 40px rgba(56,189,248,0.25);
+    transition: box-shadow 0.4s ease;
   }
 }
 
@@ -472,7 +502,173 @@ footer p span {
 
 
 
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* MOBILE: 3 per row */
+  gap: 16px;
+  margin: 20px 0;
+}
 
+.service-item {
+  text-align: center;
+}
+
+.service-item img {
+  width: 85px;     /* Big image for mobile */
+  height: 85px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.service-item p {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: #222;
+}
+
+/* 🔥 Desktop / Tablet */
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr); /* DESKTOP: 4 per row */
+  }
+
+  .service-item img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.browse-models {
+  width: 100%;
+  padding: 20px 12px;
+  background: #f9f9f9;
+  border-top: 2px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.browse-models h2 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+/* Model text */
+.model-list {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Desktop view */
+@media (min-width: 768px) {
+  .browse-models {
+    padding: 30px 80px;
+  }
+
+  .browse-models h2 {
+    font-size: 22px;
+  }
+
+  .model-list {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Default: Mobile View ===== */
+.app-promo {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    padding: 12px;
+}
+
+.app-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Download button - Mobile friendly */
+.download-app-btn {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 35px;
+    transition: 0.3s ease;
+}
+
+/* Tap effect (mobile) */
+.download-app-btn:active {
+    transform: scale(0.97);
+}
+
+/* ===== Tablet & Desktop View ===== */
+@media (min-width: 768px) {
+    .app-promo {
+        max-width: 520px;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .download-app-btn {
+        width: auto;
+        display: inline-block;
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+
+    .download-app-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+}
 
 
 </style>
@@ -567,10 +763,93 @@ footer p span {
   </div>
 </section>
 
+<div class="services-grid">
+
+  <div class="service-item">
+    <img src="S1.png" alt="Bike Service">
+    <p>Bike Service</p>
+  </div>
+
+  <div class="service-item">
+    <img src="S2.png" alt="Battery Service">
+    <p>Battery Service</p>
+  </div>
+
+  <div class="service-item">
+    <img src="S3.png" alt="Wiring  Work">
+    <p>Wiring  Work</p>
+  </div>
+
+  <div class="service-item">
+    <img src="S4.png" alt="Engine Oil">
+    <p>Engine Oil</p>
+  </div>
+
+  <div class="service-item">
+    <img src="S6.png" alt="Chain Pocket">
+    <p>Bike Chain issue</p>
+  </div>
+  <div class="service-item">
+    <img src="S7.png" alt="Bike full Coloring">
+    <p>Bike full Coloring </p>
+  </div>
+  <div class="service-item">
+    <img src="S8.png" alt="Engine work">
+    <p>Engine work</p>
+  </div>
+  <div class="service-item">
+    <img src="S9.png" alt="Trust & Quality">
+    <p>Trust & Quality</p>
+  </div>
+  <div class="service-item">
+    <img src="S10.png" alt="Premium Service">
+    <p>Premium Service</p>
+  </div>
+
+</div>
+
+
+
+
+
+<section class="browse-models">
+  <h2>Browse Service by Model</h2>
+
+  <div class="model-list">
+    Honda Activa 5G / Bajaj Pulsar 150 / Hero Passion Plus / Hero Splendor Plus /
+    Honda CB Unicorn / Enfield Classic 350 / Bajaj Pulsar 200 ES / Hero HF Deluxe /
+    TVS XL 100 / Bajaj CT 100 / Hero Glamour / Bajaj Platina /
+    Hero Passion Pro / Suzuki Access / TVS Jupiter / Honda Dio /
+    KTM Duke / Yamaha Fazer / TVS Apache / Bullet 350 /
+    Bullet 500 / Sports Bike
+  </div>
+</section>
+
+
+<!-- APP PROMO SECTION -->
+<div class="app-promo">
+
+    <img src="Sarkar-garage.png" alt="Sarkar Garage App" class="app-image">
+
+    <a href="https://drive.google.com/uc?export=download&id=1frHMy_TKuPzOLW49MrTZGMJn3gHZ2UVB"
+       class="download-app-btn">
+        📲 Download Mobile App
+    </a>
+
+</div>
+
+
 <!-- FOOTER -->
 <footer id="contact">
   <p><span>📞 Contact:</span> +91 7499665959</p>
-  <p><span>📍 Location:</span> Near T-Point Mahur, Maharashtra</p>
+<p><span></span> 📍 Location:</span></p>
+  <a href="https://maps.app.goo.gl/ogwRbAgRGi4skZFWA"
+   target="_blank"
+   class="map-link">
+    Near T-Point Mahur, Maharashtra
+</a>
+
+
   <p><span>🏍️ Workshop:</span> Sarkar Garage – Premium Bike Service & Spare Parts</p>
   <p><span>👤 Owner:</span> Mohammad Samad</p>
   <p>© 2025 Sarkar Garage. All Rights Reserved.</p>
