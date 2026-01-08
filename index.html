@@ -610,7 +610,6 @@ footer p span {
 
 
 
-
 /* ===== Default: Mobile View ===== */
 .app-promo {
     width: 100%;
@@ -618,11 +617,15 @@ footer p span {
     margin: 20px auto;
     text-align: center;
     padding: 12px;
+
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .app-image {
     width: 100%;
     height: auto;
+    display: block;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
@@ -640,6 +643,8 @@ footer p span {
     text-decoration: none;
     border-radius: 35px;
     transition: 0.3s ease;
+
+    box-sizing: border-box;
 }
 
 /* Tap effect (mobile) */
@@ -658,17 +663,7 @@ footer p span {
     }
 
     .download-app-btn {
-        width: auto;
-        display: inline-block;
-        padding: 14px 32px;
-        font-size: 16px;
-    }
-
-    .download-app-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-}
+        width: auto
 
 
 </style>
@@ -842,12 +837,16 @@ footer p span {
 <!-- FOOTER -->
 <footer id="contact">
   <p><span>📞 Contact:</span> +91 7499665959</p>
-<p><span></span> 📍 Location:</span></p>
-  <a href="https://maps.app.goo.gl/ogwRbAgRGi4skZFWA"
+<p class="location-title">
+  📍 <span>Location:</span>
+</p>
+
+<a href="https://maps.app.goo.gl/ogwRbAgRGi4skZFWA"
    target="_blank"
    class="map-link">
-    Near T-Point Mahur, Maharashtra
+   Near T-Point Mahur, Maharashtra
 </a>
+
 
 
   <p><span>🏍️ Workshop:</span> Sarkar Garage – Premium Bike Service & Spare Parts</p>
