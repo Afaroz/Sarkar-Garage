@@ -665,6 +665,44 @@ footer p span {
     .download-app-btn {
         width: auto
 
+    }
+  }
+/* ===== TRUST BOX (MOBILE FIRST) ===== */
+.trust-box {
+  margin: 14px auto 22px;
+  padding: 16px;
+  width: 92%;
+  background: linear-gradient(135deg, #eaffea, #ffffff);
+  border: 2px solid #28a745;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #222;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.trust-box div {
+  margin-bottom: 6px;
+}
+
+/* ===== DESKTOP VIEW ===== */
+@media (min-width: 768px) {
+  .trust-box {
+    max-width: 720px;          /* center & neat */
+    padding: 22px 28px;
+    font-size: 16px;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 column layout */
+    gap: 10px 24px;
+  }
+
+  .trust-box div {
+    margin-bottom: 0;
+  }
+}
 
 </style>
 </head>
@@ -842,6 +880,14 @@ footer p span {
 </div>
 
 
+<!-- Scrolling Images END -->
+
+<div class="trust-box">
+  <div>✅ 5+ Years Experience</div>
+  <div>✅ Genuine Spare Parts</div>
+  <div>✅ Affordable Price</div>
+  <div>✅ Trusted by Local Customers</div>
+</div>
 
 
 
