@@ -697,6 +697,56 @@ footer p span {
 }
 
 
+
+
+
+
+
+
+
+/* ===== MOBILE VIEW FIX ===== */
+@media (max-width: 768px){
+
+  .review-section{
+    padding:15px 10px;
+    margin:10px;
+  }
+
+  .review-section h2{
+    font-size:18px;
+    margin-bottom:12px;
+  }
+
+  .review-track{
+    animation: scrollReviewsMobile 25s linear infinite;
+  }
+
+  .review-card{
+    width:85vw;              /* 🔥 mobile width */
+    margin:0 8px;
+    padding:14px;
+  }
+
+  .review-card p{
+    font-size:14px;
+    line-height:1.5;
+  }
+
+  .review-card span{
+    font-size:12px;
+  }
+}
+
+/* MOBILE SCROLL ANIMATION */
+@keyframes scrollReviewsMobile{
+  0%{ transform: translateX(0); }
+  100%{ transform: translateX(-70%); }
+}
+
+
+
+
+
 </style>
 </head>
 <body>
@@ -957,7 +1007,45 @@ footer p span {
     Bullet 500 / Sports Bike
   </div>
 </section>
+<div class="review-section">
+  <h2>Customer Reviews ⭐⭐⭐⭐⭐</h2>
 
+  <div class="review-slider">
+    <div class="review-track">
+
+      <div class="review-card">
+        ⭐⭐⭐⭐⭐  
+        <p>“Excellent service. Very clean work and delivered on time.”</p>
+        <span>– Local Customer, Mahur</span>
+      </div>
+
+      <div class="review-card">
+        ⭐⭐⭐⭐⭐  
+        <p>“Genuine spare parts and reasonable prices. Highly recommended.”</p>
+        <span>– Bike Owner</span>
+      </div>
+
+      <div class="review-card">
+        ⭐⭐⭐⭐⭐  
+        <p>“Engine work was done perfectly. My bike runs very smooth now.”</p>
+        <span>– Regular Customer</span>
+      </div>
+
+      <div class="review-card">
+        ⭐⭐⭐⭐⭐  
+        <p>“Professional battery and electrical repair service.”</p>
+        <span>– Local Customer</span>
+      </div>
+
+      <div class="review-card">
+        ⭐⭐⭐⭐⭐  
+        <p>“Trusted garage with experienced mechanics and quality service.”</p>
+        <span>– Customer, Nanded</span>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 
