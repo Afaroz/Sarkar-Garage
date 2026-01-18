@@ -605,68 +605,58 @@ footer p span {
 
 
 
-
-
-
-
-
-/* ===== Default: Mobile View ===== */
-.app-promo {
-    width: 100%;
-    max-width: 100%;
-    margin: 20px auto;
-    text-align: center;
-    padding: 12px;
-
-    box-sizing: border-box;
-    overflow-x: hidden;
+/* ===== WRAPPER ===== */
+.app-section{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding:40px 12px;
+    box-sizing:border-box;
 }
 
-.app-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/* ===== CARD ===== */
+.app-promo{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    border-radius:24px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* Download button - Mobile friendly */
-.download-app-btn {
-    display: block;
-    width: 100%;
-    margin-top: 18px;
-    padding: 15px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: #fff;
-    font-size: 17px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 35px;
-    transition: 0.3s ease;
-
-    box-sizing: border-box;
+/* ===== IMAGE ===== */
+.app-image{
+    width:100%;
+    max-width:360px;
+    height:auto;
+    margin:0 auto;
+    display:block;
+    border-radius:26px;
 }
 
-/* Tap effect (mobile) */
-.download-app-btn:active {
-    transform: scale(0.97);
+/* ===== BUTTON ===== */
+.download-app-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 36px;
+    background:linear-gradient(135deg,#ff416c,#ff4b2b);
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    font-size:16px;
 }
 
-/* ===== Tablet & Desktop View ===== */
-@media (min-width: 768px) {
-    .app-promo {
-        max-width: 520px;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+/* ===== DESKTOP ===== */
+@media (min-width:768px){
+    .app-section{
+        padding:60px 0;
     }
+}
 
-    .download-app-btn {
-        width: auto
 
-    }
-  }
+
 /* ===== TRUST BOX (MOBILE FIRST) ===== */
 .trust-box {
   box-sizing: border-box;
@@ -969,14 +959,21 @@ footer p span {
 </section>
 
 
-<!-- APP PROMO SECTION -->
-<div class="app-promo">
-<img src="https://res.cloudinary.com/dlq5khrl3/image/upload/v1768751087/WhatsApp_Image_2026-01-18_at_9.08.58_PM_hgpmhs.jpg" class="banner">
 
-    <a href="https://drive.google.com/uc?export=download&id=1frHMy_TKuPzOLW49MrTZGMJn3gHZ2UVB"
-       class="download-app-btn">
-        📲 Download Mobile App
+
+<div class="app-section">
+  
+  <div class="app-promo">
+    <img 
+      src="https://res.cloudinary.com/dlq5khrl3/image/upload/v1768751087/WhatsApp_Image_2026-01-18_at_9.08.58_PM_hgpmhs.jpg" 
+      class="app-image" 
+      alt="Sarkar Garage App"
+    >
+
+    <a href="#" class="download-app-btn">
+      📲 Download Mobile App
     </a>
+  </div>
 
 </div>
 
