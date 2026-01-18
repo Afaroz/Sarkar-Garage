@@ -703,44 +703,55 @@ footer p span {
 
 
 
+.review-section{
+  background:#fff;
+  padding:20px;
+  margin:15px;
+  border-radius:10px;
+  text-align:center;
+}
 
-/* ===== MOBILE VIEW FIX ===== */
-@media (max-width: 768px){
+.review-slider{
+  overflow:hidden;
+  position:relative;
+}
 
-  .review-section{
-    padding:15px 10px;
-    margin:10px;
-  }
+.review-track{
+  display:flex;
+  transition: transform 0.6s ease-in-out;
+}
 
-  .review-section h2{
-    font-size:18px;
-    margin-bottom:12px;
-  }
+.review-card{
+  background:#f1f1f1;
+  width:280px;
+  margin:0 10px;
+  padding:15px;
+  border-radius:10px;
+  flex-shrink:0;
+}
 
+/* ⭐ DESKTOP ONLY: continuous scroll */
+@media (min-width: 769px){
   .review-track{
-    animation: scrollReviewsMobile 25s linear infinite;
+    animation: scrollReviews 30s linear infinite;
   }
 
-  .review-card{
-    width:85vw;              /* 🔥 mobile width */
-    margin:0 8px;
-    padding:14px;
+  .review-slider:hover .review-track{
+    animation-play-state: paused;
   }
 
-  .review-card p{
-    font-size:14px;
-    line-height:1.5;
-  }
-
-  .review-card span{
-    font-size:12px;
+  @keyframes scrollReviews{
+    0%{ transform: translateX(0); }
+    100%{ transform: translateX(-50%); }
   }
 }
 
-/* MOBILE SCROLL ANIMATION */
-@keyframes scrollReviewsMobile{
-  0%{ transform: translateX(0); }
-  100%{ transform: translateX(-70%); }
+/* ⭐ MOBILE VIEW */
+@media (max-width: 768px){
+  .review-card{
+    width:85vw;
+    margin:0 7.5vw; /* center */
+  }
 }
 
 
@@ -1010,37 +1021,27 @@ footer p span {
 <div class="review-section">
   <h2>Customer Reviews ⭐⭐⭐⭐⭐</h2>
 
-  <div class="review-slider">
+  <div class="review-slider" id="reviewSlider">
     <div class="review-track">
 
-      <div class="review-card">
-        ⭐⭐⭐⭐⭐  
+      <div class="review-card">⭐⭐⭐⭐⭐
         <p>“Excellent service. Very clean work and delivered on time.”</p>
         <span>– Local Customer, Mahur</span>
       </div>
 
-      <div class="review-card">
-        ⭐⭐⭐⭐⭐  
+      <div class="review-card">⭐⭐⭐⭐⭐
         <p>“Genuine spare parts and reasonable prices. Highly recommended.”</p>
         <span>– Bike Owner</span>
       </div>
 
-      <div class="review-card">
-        ⭐⭐⭐⭐⭐  
+      <div class="review-card">⭐⭐⭐⭐⭐
         <p>“Engine work was done perfectly. My bike runs very smooth now.”</p>
         <span>– Regular Customer</span>
       </div>
 
-      <div class="review-card">
-        ⭐⭐⭐⭐⭐  
+      <div class="review-card">⭐⭐⭐⭐⭐
         <p>“Professional battery and electrical repair service.”</p>
         <span>– Local Customer</span>
-      </div>
-
-      <div class="review-card">
-        ⭐⭐⭐⭐⭐  
-        <p>“Trusted garage with experienced mechanics and quality service.”</p>
-        <span>– Customer, Nanded</span>
       </div>
 
     </div>
