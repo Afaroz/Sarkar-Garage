@@ -702,7 +702,6 @@ footer p span {
 
 
 
-
 .review-section{
   background:#fff;
   padding:20px;
@@ -712,46 +711,31 @@ footer p span {
 }
 
 .review-slider{
+  width:100%;
   overflow:hidden;
-  position:relative;
 }
 
 .review-track{
   display:flex;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease;
 }
 
 .review-card{
+  min-width:100%;
+  box-sizing:border-box;
   background:#f1f1f1;
-  width:280px;
-  margin:0 10px;
-  padding:15px;
+  padding:18px;
   border-radius:10px;
-  flex-shrink:0;
 }
 
-/* ⭐ DESKTOP ONLY: continuous scroll */
-@media (min-width: 769px){
-  .review-track{
-    animation: scrollReviews 30s linear infinite;
-  }
-
-  .review-slider:hover .review-track{
-    animation-play-state: paused;
-  }
-
-  @keyframes scrollReviews{
-    0%{ transform: translateX(0); }
-    100%{ transform: translateX(-50%); }
-  }
+.review-card p{
+  font-size:15px;
+  margin:10px 0;
 }
 
-/* ⭐ MOBILE VIEW */
-@media (max-width: 768px){
-  .review-card{
-    width:85vw;
-    margin:0 7.5vw; /* center */
-  }
+.review-card span{
+  font-size:13px;
+  color:#555;
 }
 
 
@@ -1021,27 +1005,31 @@ footer p span {
 <div class="review-section">
   <h2>Customer Reviews ⭐⭐⭐⭐⭐</h2>
 
-  <div class="review-slider" id="reviewSlider">
-    <div class="review-track">
+  <div class="review-slider" id="slider">
+    <div class="review-track" id="track">
 
-      <div class="review-card">⭐⭐⭐⭐⭐
-        <p>“Excellent service. Very clean work and delivered on time.”</p>
+      <div class="review-card">
+        ⭐⭐⭐⭐⭐
+        <p>Excellent service. Very clean work and delivered on time.</p>
         <span>– Local Customer, Mahur</span>
       </div>
 
-      <div class="review-card">⭐⭐⭐⭐⭐
-        <p>“Genuine spare parts and reasonable prices. Highly recommended.”</p>
+      <div class="review-card">
+        ⭐⭐⭐⭐⭐
+        <p>Genuine spare parts and reasonable prices.</p>
         <span>– Bike Owner</span>
       </div>
 
-      <div class="review-card">⭐⭐⭐⭐⭐
-        <p>“Engine work was done perfectly. My bike runs very smooth now.”</p>
+      <div class="review-card">
+        ⭐⭐⭐⭐⭐
+        <p>Engine work was done perfectly. Bike runs smooth.</p>
         <span>– Regular Customer</span>
       </div>
 
-      <div class="review-card">⭐⭐⭐⭐⭐
-        <p>“Professional battery and electrical repair service.”</p>
-        <span>– Local Customer</span>
+      <div class="review-card">
+        ⭐⭐⭐⭐⭐
+        <p>Professional electrical and battery service.</p>
+        <span>– Customer, Nanded</span>
       </div>
 
     </div>
@@ -1085,29 +1073,6 @@ footer p span {
 <a href="https://wa.me/917499665959" target="_blank" class="floating-whatsapp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  if (window.innerWidth > 768) return; // desktop skip
-
-  const track = document.getElementById("reviewTrack");
-  const cards = track.children;
-  let index = 0;
-
-  function slideReview(){
-    const sliderWidth = document.getElementById("reviewSlider").offsetWidth;
-    index++;
-
-    if(index >= cards.length){
-      index = 0;
-    }
-
-    track.style.transform = `translateX(-${index * sliderWidth}px)`;
-  }
-
-  setInterval(slideReview, 3000);
-});
-</script>
 
 </body>
 </html>
