@@ -227,85 +227,109 @@ nav a img {
 }
 
 /* ===================== FOOTER ===================== */
-footer {
-  background: linear-gradient(180deg, #0f172a, #020617); /* premium dark */
-  color: #cbd5f5;
-  padding: 48px 20px 40px;
-  text-align: center;
-  margin-top: 70px;
-
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  line-height: 1.8;
-
-  border-radius: 0;
-  box-shadow: 0 -10px 30px rgba(2, 6, 23, 0.8);
-  position: relative;
-  overflow: hidden;
+.garage-footer{
+  background:#111;
+  color:#ccc;
+  padding:22px 14px 90px; /* mobile bar space */
+  font-size:17px;
+  line-height:1.6;
 }
 
-/* Soft top divider glow */
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(56,189,248,0.6),
-    transparent
-  );
+.garage-footer p{
+  margin:6px 0;
 }
 
-/* Text */
-footer p {
-  margin: 10px 0;
-  font-weight: 400;
-  opacity: 0.9;
+.garage-footer .label{
+  color:#ffa500;          /* orange highlight */
+  font-weight:600;
 }
 
-footer p span {
-  font-weight: 600;
-  color: #ffffff;
+.garage-footer a{
+  color:#25d366;          /* WhatsApp green */
+  text-decoration:none;
 }
 
-/* Hover only on desktop */
-@media (hover: hover) {
-  footer:hover {
-    box-shadow: 0 -12px 40px rgba(56,189,248,0.25);
-    transition: box-shadow 0.4s ease;
+.footer-link{
+  margin-top:10px;
+}
+
+.footer-bottom{
+  margin-top:14px;
+  padding-top:10px;
+  border-top:1px solid #333;
+  text-align:center;
+  font-size:12px;
+  color:#aaa;
+}
+
+/* Desktop polish */
+@media(min-width:768px){
+  .garage-footer{
+    text-align:center;
+    padding-bottom:30px;
   }
 }
 
 
 
-/* Floating WhatsApp Button */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 20px;       /* distance from bottom */
-    right: 20px;        /* distance from right */
-    width: 60px;        /* button size */
-    height: 60px;
-    background-color: #25d366;  /* WhatsApp green */
-    border-radius: 50%;         /* circular button */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.2s;
+/* ===== FLOATING WHATSAPP BUTTON ===== */
+.floating-whatsapp{
+  position:fixed;
+  bottom:70px;           /* footer / mobile bar ke upar */
+  right:16px;
+  width:54px;
+  height:54px;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  text-decoration:none;
+  box-shadow:0 6px 14px rgba(0,0,0,0.3);
+  z-index:999;
 }
 
-.floating-whatsapp:hover {
-    transform: scale(1.1);  /* button grows slightly on hover */
+
+
+.simple-footer{
+  background:#111;
+  color:#ccc;
+  font-size:13px;
+  line-height:1.6;
 }
 
-.floating-whatsapp img {
-    width: 35px;
-    height: 35px;
+.simple-footer p{
+  margin:6px 0;
+}
+
+.simple-footer strong{
+  color:#d4af37;
+  font-weight:600;
+}
+
+.simple-footer a{
+  color:#25d366;
+  text-decoration:none;
+}
+
+.footer-links{
+  margin-top:10px;
+}
+
+.footer-bottom{
+  margin-top:14px;
+  padding-top:10px;
+  border-top:1px solid #333;
+  text-align:center;
+  font-size:12px;
+  color:#aaa;
+}
+
+@media(min-width:768px){
+  .simple-footer{
+    text-align:center;
+  }
 }
 
 
@@ -745,6 +769,7 @@ footer p span {
 </head>
 <body>
 
+  
 <header class="site-header">
   <span>SARKAR GARAGE</span>
   <img 
@@ -756,7 +781,7 @@ footer p span {
 
 <!-- NAVBAR -->
 <nav>
-  <a href="#contact" class="scroll-link">Contact</a>
+  <a href="contact.html" class="scroll-link">Contact</a>
   <a href="#parts" class="scroll-link">Parts</a>
   <a href="https://www.instagram.com/mdsamad1779" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Insta
@@ -1079,28 +1104,53 @@ footer p span {
 
 </div>
 
-
 <!-- FOOTER -->
-<footer id="contact">
-  <p><span>📞 Contact:</span> +91 7499665959</p>
-<p class="location-title">
-  📍 <span>Location:</span> Near T-Point Mahur Dist Nanded Maharashtra
-</p>
+<footer id="contact" class="garage-footer">
+
+  <p><span class="label">📞 Contact:</span> 
+    <a href="tel:+917499665959">+91 7499665959</a>
+  </p>
+
+  <p>
+    <span class="label">📍 Location:</span> 
+    Near T-Point Mahur, Dist Nanded, Maharashtra
+  </p>
 
 
+  <p>
+    <span class="label">⏰ Open:</span> 
+    9 AM – 9 PM
+  </p>
+  <p>
+    <span class="label">👤 Owner:</span> 
+    Mohammad Samad
+  </p>
 
-  <p><span>🏍️ Workshop:</span> Sarkar Garage – Premium Bike Service & Spare Parts</p>
-  <p><span>👤 Owner:</span> Mohammad Samad</p>
-  <p><span></span>⏰ Open:</span> 9 AM – 9 PM</p>
-  <a href="privacy-policy.html" target="_blank">
-  Privacy Policy
-</a>
+ 
+  <p>
+    <span class="label">🏍️ Workshop:</span> 
+    Sarkar Garage – Premium Bike Service & Spare Parts
+  </p>
 
-  <p>© 2025 Sarkar Garage. All Rights Reserved.</p>
+  <p class="footer-link">
+    <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+  </p>
+
+  <div class="footer-bottom">
+    © 2025 <strong>Sarkar Garage</strong>. All Rights Reserved.
+  </div>
+
 </footer>
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/917499665959" target="_blank" class="floating-whatsapp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+
+
+</div>
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/917499665959" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+  <img 
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+    class="wa-icon"
+  >
 </a>
 <script>
 let index = 0;
