@@ -19,14 +19,12 @@ module.exports = async function handler(req, res) {
 
     const database = await db();
 
-    const result = await database.collection("bikes").deleteOne({
-      _id: new ObjectId(id)
-    });
+    const result = await database
+      .collection("bikes")
+      .deleteOne({ _id: new ObjectId(id) });
 
     if (result.deletedCount === 0) {
-      return res.status(404).json({
-        message: "Vehicle not found"
-      });
+      return res.status(404).json({ message: "Vehicle not found" });
     }
 
     return res.status(200).json({
