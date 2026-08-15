@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Old Bikes & Cars - Sarkar Garage</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,Arial,sans-serif;background:#f5f6f8;color:#222}
+header{background:linear-gradient(135deg,#111,#333);color:#fff;padding:18px;text-align:center;position:sticky;top:0;z-index:10}
+header h1{margin:0;font-size:24px}header p{margin:5px 0 0;color:#ddd;font-size:13px}
+.wrap{max-width:1100px;margin:auto;padding:18px}
+.top{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.top a{padding:10px 15px;border-radius:10px;text-decoration:none;font-weight:700;background:#fff;color:#111;box-shadow:0 3px 12px #0001}
+.admin{background:#25d366!important;color:#fff!important}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px #0001}
+.card img{width:100%;height:210px;object-fit:cover;background:#ddd}
+.body{padding:14px}.body h2{font-size:20px;margin:0 0 8px}
+.meta{color:#666;font-size:14px;line-height:1.7}.price{font-size:22px;font-weight:800;color:#e65100;margin:10px 0}
+.wa{display:block;text-align:center;background:#25d366;color:#fff;text-decoration:none;padding:12px;border-radius:10px;font-weight:800}
+.empty{text-align:center;padding:50px 20px;background:#fff;border-radius:16px;color:#666}
+</style>
+</head>
+<body>
+<header><h1>🏍️ Old Bikes & Cars</h1><p>Buy & Sell through Sarkar Garage</p></header>
+<div class="wrap">
+  <div class="top">
+    <a href="index.html">← Sarkar Garage</a>
+    <a class="admin" href="admin.html">🔐 Owner Login</a>
+  </div>
+  <div id="list" class="grid"></div>
+</div>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+async function load(){
+ const box=document.getElementById('list');
+ try{
+  const r=await fetch('/api/listings'); const data=await r.json();
+  if(!r.ok)throw new Error();
+  if(!data.length){box.innerHTML='<div class="empty">No bikes or cars listed yet.</div>';return;}
+  box.innerHTML=data.map(x=>`
+   <article class="card">
+    <img src="${esc(x.image||'https://placehold.co/800x500?text=Vehicle')}" alt="${esc(x.title)}">
+    <div class="body">
+     <h2>${esc(x.title)}</h2>
+     <div class="meta">🚗 Type: ${esc(x.vehicleType)}<br>📅 Year: ${esc(x.year||'—')}<br>🛣️ KM: ${esc(x.km||'—')}<br>📍 ${esc(x.location||'Mahur')}</div>
+     <div class="price">₹${Number(x.price||0).toLocaleString('en-IN')}</div>
+     <a class="wa" target="_blank" href="https://wa.me/${encodeURIComponent(x.whatsapp||'917499665959')}?text=${encodeURIComponent('Hello Sarkar Garage, I am interested in '+x.title+' listed for ₹'+x.price+'.')}">💬 WhatsApp Enquiry</a>
+    </div>
+   </article>`).join('');
+ }catch(e){box.innerHTML='<div class="empty">Unable to load listings. Please try again.</div>'}
+}
+load();
+</script>
+</body>
+</html>

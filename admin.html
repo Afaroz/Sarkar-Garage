@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Owner - Sarkar Garage</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Poppins,Arial;background:#f3f4f6;color:#222}
+.wrap{max-width:850px;margin:30px auto;padding:16px}.box{background:#fff;padding:20px;border-radius:18px;box-shadow:0 8px 30px #0001}
+h1{margin-top:0}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:650px){.row{grid-template-columns:1fr}}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px;font:inherit}
+button{border:0;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer;background:#111;color:#fff}
+.green{background:#25d366}.red{background:#e53935}.small{font-size:13px;color:#666}.hidden{display:none}.msg{margin-top:10px;font-weight:700}
+.item{border:1px solid #eee;border-radius:12px;padding:12px;margin:10px 0;display:flex;gap:12px;align-items:center}
+.item img{width:90px;height:65px;object-fit:cover;border-radius:8px}.grow{flex:1}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="box">
+<h1>🔐 Sarkar Garage Owner</h1>
+<p class="small">Only the owner should use this page.</p>
+<div id="login">
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button><div id="loginMsg" class="msg"></div>
+</div>
+<div id="panel" class="hidden">
+<button class="red" onclick="logout()">Logout</button>
+<h2>Add Vehicle</h2>
+<div class="row">
+<label>Vehicle Type<select id="vehicleType"><option>Bike</option><option>Car</option></select></label>
+<label>Title<input id="title" placeholder="Honda Shine 2022"></label>
+<label>Year<input id="year" type="number" placeholder="2022"></label>
+<label>KM Driven<input id="km" placeholder="28000"></label>
+<label>Price<input id="price" type="number" placeholder="65000"></label>
+<label>Location<input id="location" value="Mahur"></label>
+</div>
+<label>Description<textarea id="description" rows="3" placeholder="Vehicle condition, documents, etc."></textarea></label>
+<label>Vehicle Photo<input id="image" type="file" accept="image/*"></label>
+<button class="green" onclick="addVehicle()">➕ Add Vehicle</button>
+<div id="msg" class="msg"></div>
+<h2>Current Listings</h2><div id="items"></div>
+</div></div></div>
+<script>
+let token=localStorage.getItem('sg_admin_token');
+const $=id=>document.getElementById(id);
+function showPanel(){$('login').classList.add('hidden');$('panel').classList.remove('hidden');load();}
+if(token)showPanel();
+async function login(){
+ try{
+  const r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:$('username').value,password:$('password').value})});
+  const d=await r.json();$('loginMsg').textContent=d.message||'';
+  if(d.token){token=d.token;localStorage.setItem('sg_admin_token',token);showPanel();}
+ }catch(e){$('loginMsg').textContent='Login failed.'}
+}
+function logout(){localStorage.removeItem('sg_admin_token');location.reload();}
+async function addVehicle(){
+ const file=$('image').files[0];if(!file){$('msg').textContent='Photo select karo.';return;}
+ $('msg').textContent='Uploading...';
+ try{
+  const sigR=await fetch('/api/sign-upload',{headers:{Authorization:'Bearer '+token}});
+  const s=await sigR.json();if(!sigR.ok)throw new Error(s.message||'Login expired');
+  const fd=new FormData();fd.append('file',file);fd.append('api_key',s.apiKey);fd.append('timestamp',s.timestamp);fd.append('signature',s.signature);fd.append('folder','sarkar-garage/vehicles');
+  const up=await fetch('https://api.cloudinary.com/v1_1/'+s.cloudName+'/image/upload',{method:'POST',body:fd});
+  const img=await up.json();if(!img.secure_url)throw new Error('Cloudinary upload failed');
+  const body={vehicleType:$('vehicleType').value,title:$('title').value,year:$('year').value,km:$('km').value,price:$('price').value,location:$('location').value,description:$('description').value,image:img.secure_url};
+  const r=await fetch('/api/listings',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify(body)});
+  const d=await r.json();if(!r.ok)throw new Error(d.message||'Save failed');
+  $('msg').textContent='Vehicle added successfully.';['title','year','km','price','description'].forEach(id=>$(id).value='');$('image').value='';load();
+ }catch(e){$('msg').textContent=e.message;}
+}
+async function load(){
+ const r=await fetch('/api/listings');const data=await r.json();
+ $('items').innerHTML=data.map(x=>`<div class="item"><img src="${x.image}"><div class="grow"><b>${x.title}</b><br>₹${Number(x.price).toLocaleString('en-IN')} · ${x.vehicleType}</div><button class="red" onclick="del('${x._id}')">Delete</button></div>`).join('')||'<p class="small">No listings yet.</p>';
+}
+async function del(id){
+ if(!confirm('Delete this listing?'))return;
+ await fetch('/api/listings/'+id,{method:'DELETE',headers:{Authorization:'Bearer '+token}});load();
+}
+</script>
+</body>
+</html>
